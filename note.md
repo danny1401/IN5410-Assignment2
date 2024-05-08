@@ -21,3 +21,14 @@ mymodel = list(map(myfunc, x))
 plt.scatter(x, y)
 plt.plot(x, mymodel)
 plt.show()
+
+
+# Plotting
+plt.figure()
+plt.scatter(dfWFI['TIMESTAMP'], dfSolution['POWER'], color='orange', label='data')
+plt.plot(dfWFI['TIMESTAMP'], SVR_y_pred, color='b', label='prediction') 
+plt.xlabel('Date')
+plt.ylabel('Power')
+plt.xticks(dfWFI['TIMESTAMP'][::79],  rotation='vertical')
+plt.legend()
+plt.show()
