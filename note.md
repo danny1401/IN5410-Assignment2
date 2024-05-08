@@ -32,3 +32,10 @@ plt.ylabel('Power')
 plt.xticks(dfWFI['TIMESTAMP'][::79],  rotation='vertical')
 plt.legend()
 plt.show()
+
+# Convert the 'TIMESTAMP' column to datetime format
+dfTrainData['TIMESTAMP'] = pd.to_datetime(dfTrainData['TIMESTAMP'])
+
+# Filter the DataFrame to include only the data for November 2013
+dfTrainData = dfTrainData[dfTrainData['TIMESTAMP'].dt.month == 11]
+dfTrainData
