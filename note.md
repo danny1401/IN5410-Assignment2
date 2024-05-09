@@ -113,3 +113,6 @@ ANN_y_pred = ANN_model.predict(X_test)
 results = ANN_model.evaluate(X_test, dfSolution['POWER'], batch_size=8)
 print('Test loss, Test accuracy:', results)
 print('RMSE for Artificial Neural Network:', results[0])
+
+
+X_train = X_train.reshape(-1, 1)
